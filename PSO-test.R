@@ -17,6 +17,7 @@ nPop = 30  # number of individuals in the population
 nIter = 10  # number of iteration
 nDim = 2  # number of dimension
 nFit = nDim+1  # number of dimensions with one value for calculated fitness
+Large = 10^8 # setting of an artificial large value
 K = 0.729  # constriction factor
 ck = 2.05  # acceleration coeficient for constriction factor
 w1 = 0.9   # initial inertia weight 
@@ -74,8 +75,8 @@ Offspring = Parents
 Xmax = max(x)
 Vmax = Xmax
 
-p = matrix(10^8, nrow = nPop, ncol = nFit)  # best position found by the particle
-pg = rep(10^8, nFit)  # best position found by any member of the neighborhood
+p = matrix(Large, nrow = nPop, ncol = nFit)  # best position found by the particle
+pg = rep(Large, nFit)  # best position found by any member of the neighborhood
 v = matrix(Vmax, nrow = nPop, ncol = nFit)  # velocity of the particle
 
 for (i in 1:nIter) {
@@ -98,7 +99,7 @@ for (i in 1:nIter) {
       Offspring[j,] = Parents[j,]
     }
   } 
-  p[] = 10^8
+  p[] = Large
 }
 
 points(Offspring, col = 'blue')
