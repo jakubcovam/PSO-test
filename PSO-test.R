@@ -6,6 +6,9 @@
 
 #-----------------------------------
 
+# in this version, number of dimensions can be only 2!!
+
+
 #---
 ## PARAMETERS ##
 ## SURFACE:
